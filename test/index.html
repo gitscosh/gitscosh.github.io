@@ -62,16 +62,15 @@
     <nav class="nav_bar">
         <ul>
             <!-- left header -->
-            <li
-                class="li_left">
+            <li class="li_left">
                 <!-- home -->
                 
                     <a class="header_btn" href="https://gitscosh.github.io">
                         <i class="fa fa-home">
                             
-                                <p class="btn_text">Home</p>
+                                </i><p class="btn_text">Home</p>
                             
-                        </i>
+                        
                     </a>
                 
                 <!-- email -->
@@ -83,47 +82,46 @@
                     <a class="header_btn" id="mxmz_btn" onclick="toggle_maximize()">
                         <i class="fa fa-window-maximize">
                             
-                                <p class="btn_text" id="mxmz_text">Maximize</p>
+                                </i><p class="btn_text" id="mxmz_text">Maximize</p>
                             
-                        </i>
+                        
                     </a>
                 
                 <!-- access token -->
                 
             </li>
             <!-- right header -->
-            <span
-                class="span_right">
+            <span class="span_right">
                 <!-- popup table of content -->
                 
                     <a class="header_btn" onclick="scroll_percentage(-0.88)">
                         <i class="fa fa-backward">
                             
-                                <p class="btn_text">Prev</p>
+                                </i><p class="btn_text">Prev</p>
                             
-                        </i>
+                        
                     </a>
                     <!-- scroll down -->
                     <a class="header_btn" onclick="scroll_percentage(0.88)">
                         <i class="fa fa-forward">
                             
-                                <p class="btn_text">Next</p>
+                                </i><p class="btn_text">Next</p>
                             
-                        </i>
+                        
                     </a>
                     <!-- popup table of content -->
                     <a class="header_btn popup_btn" onclick="toggle_toc()">
                         <i class="fa fa-bars">
                             
-                                <p class="btn_text">Content</p>
+                                </i><p class="btn_text">Content</p>
                             
-                        </i>
+                        
                     </a>
                 
             </span>
         </ul>
     </nav>
-    <hr/>
+    <hr>
 </div>
 <!-- table of content -->
 
@@ -131,7 +129,8 @@
     
     <!-- generate toc -->
     <ul id="ul_toc" class="ul_toc">
-  <li><a href="#5-python-notes">5. Python Notes</a>
+  <li>
+<a href="#5-python-notes">5. Python Notes</a>
     <ul>
       <li><a href="#boolean">Boolean</a></li>
       <li><a href="#integers">Integers</a></li>
@@ -244,7 +243,7 @@
   <li>hex: 0x10</li>
 </ul>
 
-<p>:boom: <strong>Note</strong></p>
+<p><img class="emoji" title=":boom:" alt=":boom:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png" height="20" width="20"> <strong>Note</strong></p>
 
 <ul>
   <li>Rounding is always toward zero.</li>
@@ -262,10 +261,11 @@
  You can also insert the newline yourself with <code class="language-plaintext highlighter-rouge">\\n</code></p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">\\</code> is an escape sequence</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">\\</code> is an escape sequence</li>
 </ul>
 
-<p>:bulb: Hint</p>
+<p><img class="emoji" title=":bulb:" alt=":bulb:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20"> Hint</p>
 
 <ul>
   <li>Rather than escape a lot in a string, such as the path to a file, you can use <code class="language-plaintext highlighter-rouge">r</code> (raw) at the beginning.</li>
@@ -280,7 +280,7 @@
   <li>support most of the same operations as strings, such as indexing and splitting</li>
 </ul>
 
-<p>:page_with_curl: <strong>Bytes Literals</strong></p>
+<p><img class="emoji" title=":page_with_curl:" alt=":page_with_curl:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c3.png" height="20" width="20"> <strong>Bytes Literals</strong></p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">b'data'</code></li>
@@ -298,7 +298,7 @@
   <li><code class="language-plaintext highlighter-rouge">string.decode('utf-8')</code></li>
 </ul>
 
-<p>:warning: Important!</p>
+<p><img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" height="20" width="20"> Important!</p>
 
 <ul>
   <li>files and network resources, such as HTTP responses, are transmitted as byte streams</li>
