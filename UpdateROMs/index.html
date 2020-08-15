@@ -6,13 +6,13 @@
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <!-- site description -->
   
-  <meta content="The little boat tipped over." name="description" />
+  <meta content="Things You’ll Need" name="description" />
   <!-- referer for 3rd-part images-->
   <meta content="no-referrer" name="referrer" />
   <!-- title -->
   <title>
     
-    The little boat tipped over.
+    How to Update Your MAME ROMset
     
   </title>
   <!-- icon -->
@@ -62,16 +62,15 @@
     <nav class="nav_bar">
         <ul>
             <!-- left header -->
-            <li
-                class="li_left">
+            <li class="li_left">
                 <!-- home -->
                 
                     <a class="header_btn" href="https://gitscosh.github.io">
                         <i class="fa fa-home">
                             
-                                <p class="btn_text">Home</p>
+                                </i><p class="btn_text">Home</p>
                             
-                        </i>
+                        
                     </a>
                 
                 <!-- email -->
@@ -81,9 +80,9 @@
                     <a class="header_btn" href="https://github.com/gitscosh">
                         <i class="fa fa-github">
                             
-                                <p class="btn_text">Github</p>
+                                </i><p class="btn_text">Github</p>
                             
-                        </i>
+                        
                     </a>
                 
                 <!-- maximize -->
@@ -91,41 +90,76 @@
                     <a class="header_btn" id="mxmz_btn" onclick="toggle_maximize()">
                         <i class="fa fa-window-maximize">
                             
-                                <p class="btn_text" id="mxmz_text">Maximize</p>
+                                </i><p class="btn_text" id="mxmz_text">Maximize</p>
                             
-                        </i>
+                        
                     </a>
                 
                 <!-- access token -->
                 
-                    <a class="header_btn" id="acs_btn" onclick="apply_token()">
-                        <i class="fa fa-key">
-                            
-                                <p class="btn_text">Token</p>
-                            
-                        </i>
-                    </a>
-                    <textarea class="access_token" cols="8" id="acs_tkn" rows="1"></textarea>
-                
             </li>
             <!-- right header -->
-            <span
-                class="span_right">
+            <span class="span_right">
                 <!-- popup table of content -->
                 
-                    <a class="title">It's in that place where I put that thing that one time.</a>
-                    
-                        <a class="owner">
-                            -
-                            Gitscosh</a>
-                    
+                    <a class="header_btn" onclick="scroll_percentage(-0.88)">
+                        <i class="fa fa-backward">
+                            
+                                </i><p class="btn_text">Prev</p>
+                            
+                        
+                    </a>
+                    <!-- scroll down -->
+                    <a class="header_btn" onclick="scroll_percentage(0.88)">
+                        <i class="fa fa-forward">
+                            
+                                </i><p class="btn_text">Next</p>
+                            
+                        
+                    </a>
+                    <!-- popup table of content -->
+                    <a class="header_btn popup_btn" onclick="toggle_toc()">
+                        <i class="fa fa-bars">
+                            
+                                </i><p class="btn_text">Content</p>
+                            
+                        
+                    </a>
                 
             </span>
         </ul>
     </nav>
-    <hr/>
+    <hr>
 </div>
 <!-- table of content -->
+
+    <div class="div_toc toc" id="popup_toc">
+    
+    <!-- generate toc -->
+    <ul id="ul_toc" class="ul_toc">
+  <li>
+<a href="#things-youll-need">Things You’ll Need</a>
+    <ul>
+      <li><a href="#steps">Steps</a></li>
+    </ul>
+  </li>
+</ul>
+    </div>
+    <!-- toggle toc -->
+    <script>
+    function toggle_toc() {
+        var popup = document.getElementById("popup_toc");
+        popup.classList.toggle("show");
+    }
+    </script>
+    <!-- scroll page -->
+        <script>
+    function scroll_percentage(mtpler) {
+        document
+        .getElementById("div_atcl")
+        .scrollBy(0, window.innerHeight * mtpler);
+    }
+    </script>
 
 <!-- toggle maximize -->
 
@@ -157,45 +191,67 @@
 
 <!-- encrypt and decrypt -->
 
-    <script src="https://gitscosh.github.io/assets/js/sjcl.js" async></script>
-    <script>
-  function decrypt_all(pwd, class_name) {
-    var elem_clct = document.getElementsByClassName(class_name);
-    if (elem_clct.length == 0) {
-      console.log("No texts to decrypt!");
-      return false;
-    }
-    for (acc = 0; acc < elem_clct.length; acc++) {
-      var encrypted = elem_clct[acc].id;
-      var ct =
-        '{"iv":"' +
-        encrypted.substring(0, 22) +
-        '==",salt:"","ct":"' +
-        encrypted.substring(22) +
-        '"}';
-      try {
-        var txt = sjcl.json.decrypt(pwd, ct);
-      } catch (e) {
-        alert("Invalid Access Token!");
-        return;
-      }
-      elem_clct[acc].innerHTML = txt;
-    }
-    return true;
-  }
-  function apply_token() {
-    var tkn = document.getElementById("acs_tkn");
-    if (decrypt_all(tkn.value, "encrypted")) {
-      tkn.style.display = "none";
-      document.getElementById("acs_btn").style.display = "none";
-    }
-  }
-</script>
-
 
       <div class="div_article" id="div_atcl">       
         <article id="main_atcl" itemscope itemtype="http://schema.org/BlogPosting">
-          <h1 id="20-minutes-into-the-future">20 MINUTES INTO THE FUTURE</h1>
+          <h1>
+  How to Update Your MAME ROMset
+</h1>
+<div class="post_info">
+  <!-- author -->
+  
+  <span>
+    <i class="fa fa-user-secret"></i>
+    Scosh
+  </span>
+  
+  <!-- date -->
+  
+  <span>
+    <i class="fa fa-calendar"></i>
+    Aug 14, 2020
+  </span>
+  
+  <!-- category -->
+  
+  <span>
+    <i class="fa fa-archive"></i>
+    Retro Gaming
+  </span>
+  
+</div>
+<!-- abstract -->
+<div class="abstract">
+  
+  <p>How to update your MAME ROMset between point releases and get crazy upload ratio on your private torrent.</p>
+  
+</div>
+
+<h2 id="things-youll-need">Things You’ll Need</h2>
+
+<ol>
+  <li>Verified ROMset downloaded from your private tracker torrent</li>
+  <li>Torrent file for new point release from same private tracker</li>
+  <li>DAT file (either DAT or XML format) for new release</li>
+  <li>Latest version of ROMVault</li>
+  <li>Favorite torrent client (recommend qBittorrent for any platform)</li>
+</ol>
+
+<h3 id="steps">Steps</h3>
+
+<blockquote>
+  <p>This guide assumes you’re starting with a full set of ROMVault verified ROMs from the previous point release (example: 0.222, and you want to easily upgrade to 0.223.) It also assumes you have ROMVault set up and know how to use it. Check the ROMVault web site for a tutorial, if you need some help.</p>
+</blockquote>
+
+<ol>
+  <li>Load up the dat file and verify the current ROMset you have downloaded against the datfile for the NEW point release. The goal is to reuse as much of the current set as possible, so you have a minimum to download. I don’t have to tell you how important that is on ratio sites.</li>
+  <li>After running fixes, you’ve got a set that’s going to be as close as you can get to the new set before downloading.</li>
+  <li>Load up the torrent file for the new set, and point the download directory to your current set. Then <code class="language-plaintext highlighter-rouge">force recheck</code> on the torrent. You should get well over 90% completion.</li>
+  <li>Once the recheck is done, simply start the torrent up, and download the differing files. You’ll have a new multi-gigabyte ROMset for very little download.</li>
+</ol>
+
+<p><img class="emoji" title=":bulb:" alt=":bulb:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20"> If you start with the non-merged set, you can easily build the merged and split sets, and have even more to share with the community.</p>
+
 
           
 <!-- list of articles: sort by date (by default) -->
@@ -210,17 +266,17 @@
     </thead>
     <tbody>
         
-        </tr>
+        
         <td class="td_title"><a href="https://gitscosh.github.io/UpdateROMs/">How to Update Your MAME ROMset</a></td>
         <td class="td_date">Aug 14, 20</td>
         <td class="td_category">Retro Gaming</td>
-        </tr>
         
-        </tr>
+        
+        
         <td class="td_title"><a href="https://gitscosh.github.io/sjcl/">An Encrypt and Dectrypt tool with sjcl.js</a></td>
         <td class="td_date">Apr 16, 19</td>
         <td class="td_category">Sample</td>
-        </tr>
+        
         
     </tbody>
 </table>
@@ -239,8 +295,8 @@
                 Designed by DeerRIDER, All Rights Reserved
             </li>
             
-    </nav>
-    </ul>
+    </ul></nav>
+    
 </div>
           
       </div>
