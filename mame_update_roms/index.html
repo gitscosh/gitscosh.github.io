@@ -68,7 +68,7 @@
                     <a class="header_btn" href="https://gitscosh.github.io">
                         <i class="fa fa-home">
                             
-                                </i><p class="btn_text"> Home</p>
+                                </i><p class="btn_text">Home</p>
                             
                         
                     </a>
@@ -80,7 +80,7 @@
                     <a class="header_btn" href="https://github.com/gitscosh">
                         <i class="fa fa-github">
                             
-                                </i><p class="btn_text"> Github</p>
+                                </i><p class="btn_text">Github</p>
                             
                         
                     </a>
@@ -90,21 +90,12 @@
                     <a class="header_btn" id="mxmz_btn" onclick="toggle_maximize()">
                         <i class="fa fa-window-maximize">
                             
-                                </i><p class="btn_text" id="mxmz_text"> Maximize</p>
+                                </i><p class="btn_text" id="mxmz_text">Maximize</p>
                             
                         
                     </a>
                 
                 <!-- access token -->
-                
-                    <a class="header_btn" id="acs_btn" onclick="apply_token()">
-                        <i class="fa fa-key">
-                            
-                                </i><p class="btn_text"> Token</p>
-                            
-                        
-                    </a>
-                    <textarea class="access_token" cols="8" id="acs_tkn" rows="1"></textarea>
                 
             </li>
 
@@ -176,41 +167,6 @@
 </script>
 
 <!-- encrypt and decrypt -->
-
-    <script src="https://gitscosh.github.io/assets/js/sjcl.js" async></script>
-    <script>
-  function decrypt_all(pwd, class_name) {
-    var elem_clct = document.getElementsByClassName(class_name);
-    if (elem_clct.length == 0) {
-      console.log("No texts to decrypt!");
-      return false;
-    }
-    for (acc = 0; acc < elem_clct.length; acc++) {
-      var encrypted = elem_clct[acc].id;
-      var ct =
-        '{"iv":"' +
-        encrypted.substring(0, 22) +
-        '==",salt:"","ct":"' +
-        encrypted.substring(22) +
-        '"}';
-      try {
-        var txt = sjcl.json.decrypt(pwd, ct);
-      } catch (e) {
-        alert("Invalid Access Token!");
-        return;
-      }
-      elem_clct[acc].innerHTML = txt;
-    }
-    return true;
-  }
-  function apply_token() {
-    var tkn = document.getElementById("acs_tkn");
-    if (decrypt_all(tkn.value, "encrypted")) {
-      tkn.style.display = "none";
-      document.getElementById("acs_btn").style.display = "none";
-    }
-  }
-</script>
 
 
       <div class="div_article" id="div_atcl">
